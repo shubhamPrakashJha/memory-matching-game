@@ -58,11 +58,13 @@ h1 {
     justify-content: center;
     display: flex;
     align-items: center;
+    cursor: pointer;
  }
 
  .deck .cards.open{
     transform: rotateY(0);
     background: #02ccba;
+    cursor: default;
  }
 
  .deck .cards.show {
@@ -72,6 +74,7 @@ h1 {
  .deck .cards.match{
     background: #02ccba;
     font-size: 33px;
+    cursor: default;
  }
 
  /*
@@ -95,4 +98,5 @@ h1 {
  .score-panel .restart {
     display: inline-flex;
     float: right;
+    cursor: pointer;
  }
