@@ -74,3 +74,27 @@ h1 {
     background: #02ccba;
     font-size: 33px;
  }
+
+ /*
+ * Styles for the Score Panel
+ */
+ .score-panel{
+    width: 345px;
+    text-align: left;
+    margin-bottom: 10px;
+
+ }
+
+ .stars{
+    display: inline-flex;
+    text-align: left;
+    list-style: none;
+    margin: 0 5px 0 0;
+    padding: 0;
+
+ }
+
+ .restart {
+    display: inline-flex;
+    float: right;
+ }
