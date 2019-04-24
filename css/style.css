@@ -16,6 +16,7 @@ body {
 }
 
 .container {
+    min-width: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,8 +35,6 @@ h1 {
 
  .deck {
     width: 600px;
-    margin-left: auto;
-    margin-right: auto;
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
     border-radius: 10px;
@@ -81,11 +80,10 @@ h1 {
  .score-panel{
     width: 345px;
     text-align: left;
-    margin-bottom: 10px;
 
  }
 
- .stars{
+ .score-panel .stars{
     display: inline-flex;
     text-align: left;
     list-style: none;
@@ -94,7 +92,7 @@ h1 {
 
  }
 
- .restart {
+ .score-panel .restart {
     display: inline-flex;
     float: right;
  }
