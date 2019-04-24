@@ -11,9 +11,8 @@ body{
 }
 
 body {
-    background: url('../img/background.jpg');
+    background: url('../img/geometry2.png');
     font-family: 'coda', cursive;
-    color:#6e8d90;
 }
 
 .container {
@@ -27,3 +26,4 @@ h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 }
+
