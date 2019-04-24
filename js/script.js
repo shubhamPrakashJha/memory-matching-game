@@ -12,6 +12,8 @@ let openCards = [];
 const scoreBoard = document.querySelector('.moves');
 let moves = 0;
 
+const starBoard = document.querySelector('.stars');
+
 // Shuffle function from http://stackoverflow.com/a/2450976
 // takes a list as an input returns the shuffled list
 function shuffle(array) {
@@ -59,10 +61,23 @@ shuffleButton.addEventListener('click', reset);
  * Add interactivity to the card
  */
 
+// update the stars earned based on no. of moves 
+function updateStar() {
+    let starChild = starBoard.querySelectorAll('.fa');
+    if (moves > 35) {
+        starChild[0].classList.replace('fa-star', 'fa-star-o');
+    } else if (moves > 20) {
+        starChild[1].classList.replace('fa-star', 'fa-star-o');
+    } else if (moves > 15) {
+        starChild[2].classList.replace('fa-star', 'fa-star-o');
+    }
+}
+
 //  update score in the score-panel
 function updateScore() {
     moves++;
     scoreBoard.textContent = moves;
+    updateStar();
 }
 
 // locak the card in the open position
