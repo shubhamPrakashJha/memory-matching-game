@@ -45,3 +45,32 @@ h1 {
     flex-wrap: wrap;
     list-style: none;
  }
+
+ .deck .cards{
+    width: 125px;
+    height: 125px;
+    font-size: 0%;
+    padding: 2px;
+    margin: 10px;
+    color: white;
+    background: #2e3d49;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    border-radius: 10px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+ }
+
+ .deck .cards.open{
+    transform: rotateY(0);
+    background: #02ccba;
+ }
+
+ .deck .cards.show {
+     font-size: 33px;
+ }
+
+ .deck .cards.match{
+    background: #02ccba;
+    font-size: 33px;
+ }
