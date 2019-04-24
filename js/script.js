@@ -14,6 +14,8 @@ let moves = 0;
 
 const starBoard = document.querySelector('.stars');
 
+let pair = 0;
+
 // Shuffle function from http://stackoverflow.com/a/2450976
 // takes a list as an input returns the shuffled list
 function shuffle(array) {
@@ -60,6 +62,14 @@ shuffleButton.addEventListener('click', reset);
 /*
  * Add interactivity to the card
  */
+
+
+function finalScore() {
+    setTimeout(function () {
+        window.alert(`Final Score is ${moves}`)
+    }, 0)
+
+}
 
 // update the stars earned based on no. of moves 
 function updateStar() {
@@ -113,6 +123,10 @@ function openCardList(card) {
         if (openCards[0].childNodes[0].classList[1] == openCards[1].childNodes[0].classList[1]) {
             console.log('Matched');
             lockIcon();
+            pair++;
+            if (pair === 8) {
+                finalScore();
+            }
         } else {
             console.log('Not Macthed');
             hideIcons();
