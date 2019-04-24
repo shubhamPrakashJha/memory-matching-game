@@ -5,6 +5,8 @@ const cardNodeLIst = document.querySelectorAll('.cards');
 const cardArray = Array.from(cardNodeLIst);
 const deck = document.querySelector('.deck')
 
+const shuffleButton = document.querySelector('.restart');
+
 // Shuffle function from http://stackoverflow.com/a/2450976
 // takes a list as an input returns the shuffled list
 function shuffle(array) {
@@ -37,6 +39,13 @@ function shuffleCard() {
     deck.appendChild(docFrag);
 }
 
+// reload the window
+function reset() {
+    location.reload(false);
+}
+
 // shuffle the card when the page gets loaded
-document.addEventListener('DOMContentLoaded', shuffleCard)
+document.addEventListener('DOMContentLoaded', shuffleCard);
+// shuffle the card when reload gets clicked
+shuffleButton.addEventListener('click', reset);
 
