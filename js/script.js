@@ -9,6 +9,9 @@ const shuffleButton = document.querySelector('.restart');
 
 let openCards = [];
 
+const scoreBoard = document.querySelector('.moves');
+let moves = 0;
+
 // Shuffle function from http://stackoverflow.com/a/2450976
 // takes a list as an input returns the shuffled list
 function shuffle(array) {
@@ -55,6 +58,13 @@ shuffleButton.addEventListener('click', reset);
 /*
  * Add interactivity to the card
  */
+
+//  update score in the score-panel
+function updateScore() {
+    moves++;
+    scoreBoard.textContent = moves;
+}
+
 // locak the card in the open position
 function lockIcon() {
     for (const card of openCards) {
@@ -84,6 +94,7 @@ function openCardList(card) {
     // check the match of card after 2 cards is opened
     if (openCards.length === 2) {
         console.log("2 open");
+        updateScore();
         if (openCards[0].childNodes[0].classList[1] == openCards[1].childNodes[0].classList[1]) {
             console.log('Matched');
             lockIcon();
