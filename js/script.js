@@ -130,7 +130,7 @@ function hideIcons() {
 // after opening 2 cards hide the card if not matched, lock as open otherwise
 function openCardList(card) {
     // add the card to open cards list
-    if (openCards[0] !== card && openCards.length <3) {
+    if (openCards[0] !== card && openCards.length <3 && !card.classList.contains('match')) {
         openCards.push(card);
     }
     // check the match of card after 2 cards is opened
@@ -157,8 +157,11 @@ function openCardList(card) {
 
 //  show the hidden card icon
 function showIcon(card) {
-    card.classList.add('open', 'show', 'flip');
-    openCardList(card)
+    if (!card.classList.contains('match') && openCards.length <2) {
+        card.classList.add('open', 'show', 'flip');
+        openCardList(card);
+    }
+    
 }
 
 // call showIcon Func when card is clicked
