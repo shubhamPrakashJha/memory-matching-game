@@ -81,7 +81,7 @@ function finalScore() {
             modal.style.display = "none";
         })
         modal.style.display = "block"
-    }, 0)
+    }, 400)
 
 }
 
@@ -117,10 +117,10 @@ function lockIcon() {
 function hideIcons() {
     setTimeout(function alret() {
         for (const card of openCards) {
-            card.classList.remove('open', 'show');
+            card.classList.remove('open', 'show', 'flip');
         }
         openCards = [];
-    }, 200)
+    }, 300)
 
 }
 
@@ -151,7 +151,7 @@ function openCardList(card) {
 
 //  show the hidden card icon
 function showIcon(card) {
-    card.classList.add('open', 'show');
+    card.classList.add('open', 'show', 'flip');
     openCardList(card)
 }
 
