@@ -123,7 +123,7 @@ function hideIcons() {
             card.classList.remove('open', 'show', 'flip', 'wobble');
         }
         openCards = [];
-    }, 300)
+    }, 700)
 
 }
 
