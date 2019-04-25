@@ -107,8 +107,11 @@ function updateScore() {
 // locak the card in the open position
 function lockIcon() {
     for (const card of openCards) {
-        card.classList.add('match');
-        card.classList.remove('open', 'show');
+        card.classList.add('match', 'jello');
+        card.classList.remove('open', 'show', 'flip');
+        setTimeout(function () {
+            card.classList.remove('jello');
+        },600)
     }
     openCards = [];
 }
