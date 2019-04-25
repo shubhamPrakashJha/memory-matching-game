@@ -120,7 +120,10 @@ function lockIcon() {
 function hideIcons() {
     setTimeout(function alret() {
         for (const card of openCards) {
-            card.classList.remove('open', 'show', 'flip');
+            card.classList.remove('open', 'show');
+            setTimeout(function () {
+                card.classList.remove('flip');
+            })
         }
         openCards = [];
     }, 300)
