@@ -16,6 +16,9 @@ const starBoard = document.querySelector('.stars');
 
 let pair = 0;
 
+var modal = document.querySelector('#myModal');
+var span = document.querySelector(".close");
+
 // Shuffle function from http://stackoverflow.com/a/2450976
 // takes a list as an input returns the shuffled list
 function shuffle(array) {
@@ -66,7 +69,18 @@ shuffleButton.addEventListener('click', reset);
 
 function finalScore() {
     setTimeout(function () {
-        window.alert(`Final Score is ${moves}`)
+        // window.alert(`Final Score is ${moves}`)
+        document.querySelector('.modalMoves').textContent = moves;
+        let finalStar = document.querySelector('.stars').innerHTML;
+        const modalStar = document.querySelector('.modalStars');
+        modalStar.innerHTML = finalStar;
+        span.addEventListener('click', function () {
+            modal.style.display = "none";
+        })
+        window.addEventListener('click', function () {
+            modal.style.display = "none";
+        })
+        modal.style.display = "block"
     }, 0)
 
 }
