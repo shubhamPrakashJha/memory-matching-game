@@ -120,10 +120,7 @@ function lockIcon() {
 function hideIcons() {
     setTimeout(function alret() {
         for (const card of openCards) {
-            card.classList.remove('open', 'show');
-            setTimeout(function () {
-                card.classList.remove('flip');
-            })
+            card.classList.remove('open', 'show', 'flip', 'wobble');
         }
         openCards = [];
     }, 300)
@@ -133,7 +130,7 @@ function hideIcons() {
 // after opening 2 cards hide the card if not matched, lock as open otherwise
 function openCardList(card) {
     // add the card to open cards list
-    if (openCards[0] !== card) {
+    if (openCards[0] !== card && openCards.length <3) {
         openCards.push(card);
     }
     // check the match of card after 2 cards is opened
@@ -149,6 +146,9 @@ function openCardList(card) {
             }
         } else {
             console.log('Not Macthed');
+            for (const card of openCards) {
+                card.classList.add('wobble');
+            }
             hideIcons();
         }
 

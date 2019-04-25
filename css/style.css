@@ -189,5 +189,6 @@ h1 {
 
 .wobble {
 	-webkit-animation: wobble-hor-bottom 0.8s both;
-	        animation: wobble-hor-bottom 0.8s both;
+           animation: wobble-hor-bottom 0.8s both;
+           background: red !important;
 }
