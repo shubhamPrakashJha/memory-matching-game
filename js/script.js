@@ -158,7 +158,10 @@ function openCardList(card) {
 //  show the hidden card icon
 function showIcon(card) {
     if (!card.classList.contains('match') && openCards.length <2) {
-        card.classList.add('open', 'show', 'flip');
+        card.classList.add('open', 'flip');
+        setTimeout(function () {
+            card.classList.add('show')
+        },150)
         openCardList(card);
     }
     
